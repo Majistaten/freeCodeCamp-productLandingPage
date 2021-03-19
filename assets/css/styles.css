@@ -12,6 +12,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -22,7 +23,9 @@ html {
     var(--color-darkgray) 70%,
     var(--color-darkergray) 100%
   );
-  margin: 0;
+  padding: 4rem;
+  width: 100%;
+  height: auto;
 }
 
 body {
@@ -32,18 +35,23 @@ body {
     var(--color-black) 40%,
     var(--color-black) 100%
   );
-  margin: 4rem;
+  margin: 0;
   border-radius: 15px;
   box-shadow: 20px 14px 12px rgba(0, 0, 0, 0.4);
-  height: 120vh;
   padding: 2rem;
+  width: 100%;
+  height: 140vh;
 }
 
 header {
   width: 100%;
+  height: 15rem;
   margin: 0;
-  position: sticky;
   top: 0;
+  display: grid;
+  grid-template-columns: 15rem 1fr 1fr;
+  grid-template-rows: 7rem auto 5rem;
+  position: sticky;
 }
 
 h1 {
@@ -53,18 +61,17 @@ h1 {
   color: var(--color-white);
   text-transform: uppercase;
   margin: 0;
-  position: relative;
-  left: 3rem;
+  width: auto;
+  height: auto;
 }
 
 nav {
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
+  margin: 0;
+  width: auto;
+  height: auto;
 }
 
 section {
-  position: absolute;
   color: #f2fdff;
 }
 
@@ -75,17 +82,27 @@ footer {
 }
 
 .logo {
-  width: 11rem;
-  max-width: 100%;
+  width: 13em;
+  padding-top: 1rem;
+  min-width: none;
   height: auto;
-  float: left;
-  position: relative;
+  grid-column: 1 / 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.company {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
 }
 
 .nav-bars {
-  float: right;
-  list-style: none;
+  display: flex;
+  list-style-type: none;
   text-decoration: none;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  float: right;
 }
 
 .nav-link {
@@ -98,6 +115,8 @@ footer {
 }
 .nav-link {
   padding: 1rem 4rem;
+  width: 17rem;
+  height: auto;
   text-align: center;
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
@@ -107,7 +126,6 @@ footer {
   color: var(--color-white);
   border-radius: 0.3rem;
   border-color: var(--color-darkblue);
-  display: block;
 }
 
 .nav-link:hover {
